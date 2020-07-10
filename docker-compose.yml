@@ -8,8 +8,8 @@ services:
     container_name: filebridge-ftps
     command: ftps
     ports:
-      - "21:21"
-      - "21100-21110:21100-21110"
+      - "21:21" # default ftp command port
+      - "21100-21110:21100-21110" # passive mode data transfer port range
     volumes:
       - "/d/docker/ftps/share:/home/guest"
       - "/d/docker/ftps/logs:/var/log/vsftpd"
@@ -23,7 +23,7 @@ services:
     container_name: filebridge-sftp
     command: foo:pass:1001
     ports:
-      - "22:22"
+      - "22:22" # default ssh port
     volumes:
       - "/d/docker/sftp/share:/home/foo/share"
     networks:

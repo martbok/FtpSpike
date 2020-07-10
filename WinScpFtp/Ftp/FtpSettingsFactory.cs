@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using FtpSpike.Ftp.Settings;
 using Microsoft.Extensions.Configuration;
 using WinSCP;
+using WinScpFtp.Ftp.Settings;
 
-namespace FtpSpike.Ftp
+namespace WinScpFtp.Ftp
 {
     public class FtpSettingsFactory
     {

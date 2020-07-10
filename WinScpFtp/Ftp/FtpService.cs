@@ -1,8 +1,8 @@
 ﻿using System;
-using FtpSpike.Ftp.Settings;
 using WinSCP;
+using WinScpFtp.Ftp.Settings;
 
-namespace FtpSpike.Ftp
+namespace WinScpFtp.Ftp
 {
     public class FtpService
     {

@@ -1,8 +1,8 @@
 ﻿using System;
-using FtpSpike.Ftp;
 using Microsoft.Extensions.Configuration;
+using WinScpFtp.Ftp;
 
-namespace FtpSpike
+namespace WinScpFtp
 {
     public class Program
     {

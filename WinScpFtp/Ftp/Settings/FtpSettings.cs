@@ -1,6 +1,6 @@
 ﻿using WinSCP;
 
-namespace FtpSpike.Ftp.Settings
+namespace WinScpFtp.Ftp.Settings
 {
     public class FtpSettings
     {

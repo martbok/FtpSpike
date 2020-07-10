@@ -1,7 +1,7 @@
 # FtpSpike
 # FTP Libraries Evaluation Spike
 
-This spike evaluates using WinSCP nuget package for FTPS and SFTP file transfers.
+This spike evaluates using different nuget package for FTPS and SFTP file transfers.
 
 ## Development & Local Setup
 The code has been developed using [.NET Core version 3.1](https://www.microsoft.com/net/download/core).

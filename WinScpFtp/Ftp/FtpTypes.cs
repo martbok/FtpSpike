@@ -1,4 +1,4 @@
-﻿namespace FtpSpike.Ftp
+﻿namespace WinScpFtp.Ftp
 {
     public enum FtpTypes
     {
