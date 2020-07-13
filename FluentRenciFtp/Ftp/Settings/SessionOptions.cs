@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ChilkatFtp.Ftp.Settings
+namespace FluentRenciFtp.Ftp.Settings
 {
     public class SessionOptions
     {
