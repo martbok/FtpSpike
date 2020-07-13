@@ -29,10 +29,9 @@ namespace WinScpFtp.Ftp
 
         private void TransferSession(Func<Session, TransferOperationResult> operation)
         {
-            Session session = null;
             try
             {
-                using (session = new Session())
+                using (var session = new Session())
                 {
                     // Connect
                     session.Open(_ftpSettings.SessionOptions);
@@ -53,10 +52,6 @@ namespace WinScpFtp.Ftp
             {
                 Console.WriteLine(e);
                 throw;
-            }
-            finally
-            {
-                session?.Dispose();
             }
         }
     }

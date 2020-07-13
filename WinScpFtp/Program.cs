@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.Configuration;
 using WinScpFtp.Ftp;
+using WinScpFtp.Ftp.Settings;
 
 namespace WinScpFtp
 {

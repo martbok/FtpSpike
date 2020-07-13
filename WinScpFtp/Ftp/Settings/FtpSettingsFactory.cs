@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
 using WinSCP;
-using WinScpFtp.Ftp.Settings;
 
-namespace WinScpFtp.Ftp
+namespace WinScpFtp.Ftp.Settings
 {
     public class FtpSettingsFactory
     {
