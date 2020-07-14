@@ -1,8 +1,51 @@
-version: "3.6"
+version: '3.7'
 
 services:
+  chilkatftp:
+    image: ${DOCKER_REGISTRY-}chilkatftp
+    container_name: filebridge-ftpclient-chilkat
+    build:
+      context: .
+      dockerfile: ChilkatFtp/Dockerfile
+    volumes:
+      - "/d/ftp/upload:/var/ftp/upload"
+      - "/d/ftp/download:/var/ftp/download"
+    environment:
+      - CPFileBridge_SftpOptions__Host=filebridge-sftp
+      - CPFileBridge_SftpOptions__LocalUploadFolder=/var/ftp/upload
+      - CPFileBridge_SftpOptions__LocalDownloadFolder=/var/ftp/download
+      - CPFileBridge_FtpsOptions__Host=filebridge-ftps
+      - CPFileBridge_FtpsOptions__LocalUploadFolder=/var/ftp/upload
+      - CPFileBridge_FtpsOptions__LocalDownloadFolder=/var/ftp/download
+    depends_on: 
+      - ftps
+      - sftp
+    networks:
+      - cp-fb-network
 
-# https://hub.docker.com/r/loicmathieu/vsftpd
+  fluentrenciftp:
+    image: ${DOCKER_REGISTRY-}fluentrenciftp
+    container_name: filebridge-ftpclient-fluentrenci
+    build:
+      context: .
+      dockerfile: FluentRenciFtp/Dockerfile
+    volumes:
+      - "/d/ftp/upload:/var/ftp/upload"
+      - "/d/ftp/download:/var/ftp/download"
+    environment:
+      - CPFileBridge_SftpOptions__Host=filebridge-sftp
+      - CPFileBridge_SftpOptions__LocalUploadFolder=/var/ftp/upload
+      - CPFileBridge_SftpOptions__LocalDownloadFolder=/var/ftp/download
+      - CPFileBridge_FtpsOptions__Host=filebridge-ftps
+      - CPFileBridge_FtpsOptions__LocalUploadFolder=/var/ftp/upload
+      - CPFileBridge_FtpsOptions__LocalDownloadFolder=/var/ftp/download
+    depends_on: 
+      - ftps
+      - sftp
+    networks:
+      - cp-fb-network
+
+ # https://hub.docker.com/r/loicmathieu/vsftpd
   ftps:
     image: loicmathieu/vsftpd
     container_name: filebridge-ftps

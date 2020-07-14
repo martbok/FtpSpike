@@ -1,0 +1,34 @@
+version: "3.7"
+
+services:
+
+# https://hub.docker.com/r/loicmathieu/vsftpd
+  ftps:
+    image: loicmathieu/vsftpd
+    container_name: filebridge-ftps
+    command: ftps
+    ports:
+      - "21:21" # default ftp command port
+      - "21100-21110:21100-21110" # passive mode data transfer port range
+    volumes:
+      - "/d/docker/ftps/share:/home/guest"
+      - "/d/docker/ftps/logs:/var/log/vsftpd"
+      - "/d/docker/ftps/certificate:/etc/vsftpd/private"
+    networks:
+      - cp-fb-network
+
+# https://hub.docker.com/r/atmoz/sftp/
+  sftp:
+    image: atmoz/sftp
+    container_name: filebridge-sftp
+    command: foo:pass:1001
+    ports:
+      - "22:22" # default ssh port
+    volumes:
+      - "/d/docker/sftp/share:/home/foo/share"
+    networks:
+      - cp-fb-network
+
+networks:
+  cp-fb-network:
+    name: cp-fb-network

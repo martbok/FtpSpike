@@ -13,7 +13,10 @@ namespace ChilkatFtp
         {
             Unlock();
 
-            var appSettings = new ConfigurationBuilder().AddJsonFile(AppSettingsFileName).Build();
+            var appSettings = new ConfigurationBuilder()
+                .AddJsonFile(AppSettingsFileName, true, true)
+                .AddEnvironmentVariables(prefix: "CPFileBridge_")
+                .Build();
             var ftpSettingsFactory = new FtpSettingsFactory(appSettings);
 
             Console.WriteLine("== SFTP testing ==");

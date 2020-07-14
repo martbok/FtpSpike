@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "FluentRenciFtp": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

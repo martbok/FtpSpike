@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ChilkatFtp": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
